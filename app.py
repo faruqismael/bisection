@@ -1,23 +1,23 @@
-x = 2
-y = 4
+# bisection formula to solve non-linear equation @faruqismael
 
-x1 = 1/2 * (x+y)
-
-# print(x1)
+# x = 2
+# y = 4
 
 def fOfX(x):
     formula = x**3 - 9*x + 1
     return formula
 
-px = x1
-# print(px, "ffffffffff")
-for i in range(5):
-    if fOfX(x1) > 0:
-        x1 = 1/2 * (x + x1)
-        # print(x1, "x11111111")
-        print(fOfX(x1))
-    if fOfX(x1) < 0:
-        # print(x1, "sdfdghfffsfdg")
-        x1 = 1/2 * (x1 + px)
-        print(fOfX(x1))
+def bisection(x,y):
+    x1 = 1/2 * (x+y)
+    px = x1
+    for i in range(5):
+        if fOfX(x1) > 0:
+            x1 = 1/2 * (x + x1)
+            print(fOfX(x1))
+        elif fOfX(x1) < 0:
+            x1 = 1/2 * (x1 + px)
+            print(fOfX(x1))
 
+x = int(input("enter the number to display +ve number when inserting in f(x): "))
+y = int(input("enter the number to display -ve number when inserting in f(x): "))
+bisection(x,y)
